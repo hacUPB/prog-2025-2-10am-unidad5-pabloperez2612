@@ -2,22 +2,18 @@ import os
 import csv
 import matplotlib.pyplot as plt
 
-# =========================================
-#        SUBMENÚ .TXT
-# =========================================
-
+#txt
 def submenu_txt():
     archivo_txt = "maradona.txt"
 
     if not os.path.exists(archivo_txt):
-        print(f"❌ Error: No se encontró el archivo '{archivo_txt}'.")
+        print(f" Error: No se encontró el archivo '{archivo_txt}'.")
         return
 
     with open(archivo_txt, 'r', encoding='utf-8') as fp:
         contenido = fp.read()
 
-    print(f"✅ Archivo '{archivo_txt}' cargado exitosamente.")
-
+    print(f" Archivo '{archivo_txt}' cargado exitosamente.")
     while True:
         print("\n--- SUBMENÚ .TXT ---")
         print("1. Contar palabras y caracteres")
@@ -61,7 +57,7 @@ def reemplazar_palabra(filename):
     with open(filename, 'w', encoding='utf-8') as fp:
         fp.write(nuevo_contenido)
 
-    print(f"✅ Se reemplazó '{palabra_buscar}' por '{palabra_reemplazar}' exitosamente.")
+    print(f" Se reemplazó '{palabra_buscar}' por '{palabra_reemplazar}' exitosamente.")
 
 
 def histograma_vocales(texto):
@@ -85,18 +81,15 @@ def histograma_vocales(texto):
 
     plt.show()
 
-# =========================================
-#        SUBMENÚ .CSV
-# =========================================
-
+#csv
 def submenu_csv():
     archivo_csv = "datos.csv"
 
     if not os.path.exists(archivo_csv):
-        print(f"❌ Error: No se encontró el archivo '{archivo_csv}'.")
+        print(f" Error: No se encontró el archivo '{archivo_csv}'.")
         return
 
-    print(f"✅ Archivo '{archivo_csv}' cargado exitosamente.")
+    print(f" Archivo '{archivo_csv}' cargado exitosamente.")
 
     while True:
         print("\n--- SUBMENÚ .CSV ---")
@@ -127,7 +120,7 @@ def mostrar_filas_csv(filename):
                 if i >= 14:
                     break
     except Exception as e:
-        print(f"⚠️ Error al leer el CSV: {e}")
+        print(f" Error al leer el CSV: {e}")
 
 
 def graficar_ica(filename):
@@ -148,7 +141,7 @@ def graficar_ica(filename):
                     continue
 
         if not ica:
-            print("⚠️ No hay datos numéricos válidos en el archivo.")
+            print(" No hay datos numéricos válidos en el archivo.")
             return
 
         # Asignar color según el valor de ICA
@@ -178,11 +171,9 @@ def graficar_ica(filename):
         plt.show()
 
     except Exception as e:
-        print(f"⚠️ Error al graficar: {e}")
+        print(f" Error al graficar: {e}")
+# menu principal
 
-# =========================================
-#        MENÚ PRINCIPAL
-# =========================================
 
 def mostrar_menu_general():
     print("\n--- MENÚ PRINCIPAL ---")
